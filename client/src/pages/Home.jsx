@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import FormField from '../components/FormField';
 import Loader from '../components/Loader';
 
+const RenderCards =({data, title})=>{
+  if(data?.length > 0) return data.map((post)=> <Card key={post._id} {...post} />)
+}
+
 const Home = () => {
     const [loading, setLoading]=useState(false);
     const [searchTerm, seSsearchTerm] = useState('true')
